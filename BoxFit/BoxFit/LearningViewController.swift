@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  LearningViewController.swift
 //  BoxFit
 //
 //  Created by Omar Roa on 12/5/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class LearningViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

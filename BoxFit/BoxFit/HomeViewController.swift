@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  HomeViewController.swift
 //  BoxFit
 //
 //  Created by Omar Roa on 12/5/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
