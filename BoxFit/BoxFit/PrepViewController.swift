@@ -9,11 +9,20 @@
 import UIKit
 
 class PrepViewController: UIViewController {
+    
+    @IBOutlet weak var routineImage: UIImageView!
+    @IBOutlet weak var routineText: UITextView!
+    
+    var routineOneText: String!
+    var routineTwoText: String!
+    var routineThreeText: String!
+    var type: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        routineText.text = pickText(type: type)
+        let imageName = pickImage(type: type)
+//        routineImage.image = UIImage(named: imageName)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +30,47 @@ class PrepViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func pickText(type: String) -> String {
+        if(type == "routineOne") {
+            return
+                "This is the string correlated with the information for routine One!!!"
+        }
+        else if(type == "routineTwo") {
+            return
+                "This is the string correlated with the information for routine two!!!"
+        }
+        else if(type == "routineThree") {
+            return
+                "This is the string correlated with the information for routine three!!!"
+        }
+        else {
+            return "no information found for this option"
+        }
     }
-    */
+    
+    func pickImage(type: String) -> String {
+        if(type == "routineOne") {
+            return
+                "This is the name of routine One's image"
+        }
+        else if(type == "routineTwo") {
+            return
+                "This is the name of routine two's image"
+        }
+        else if(type == "routineThree") {
+            return
+                "This is the name of routine three's image"
+        }
+        else {
+            return "no information found for this option"
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "startTrainingSegue") {
+            let nextController = (segue.destination as! RoutineViewController)
+            nextController.type = type
+        }
+    }
 
+    
 }
