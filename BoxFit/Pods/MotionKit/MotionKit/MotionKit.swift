@@ -72,7 +72,11 @@ open class MotionKit {
                 if values != nil {
                     values!(valX, valY, valZ)
                 }
-                let absoluteVal = sqrt(valX * valX + valY * valY + valZ * valZ)
+                
+                var squareX = valX * valX
+                var squareY = valY * valY
+                var squareZ = valZ * valZ
+                let absoluteVal = sqrt(squareX + squareY + squareZ)
                 self.delegate?.retrieveAccelerometerValues!(valX, y: valY, z: valZ, absoluteValue: absoluteVal)
             }
 
@@ -110,7 +114,10 @@ open class MotionKit {
                 if values != nil {
                     values!(valX, valY, valZ)
                 }
-                let absoluteVal = sqrt(valX * valX + valY * valY + valZ * valZ)
+                var squareX = valX * valX
+                var squareY = valY * valY
+                var squareZ = valZ * valZ
+                let absoluteVal = sqrt(squareX + squareY + squareZ)
                 self.delegate?.retrieveGyroscopeValues!(valX, y: valY, z: valZ, absoluteValue: absoluteVal)
             }
 
@@ -147,7 +154,10 @@ open class MotionKit {
                 if values != nil {
                     values!(valX, valY, valZ)
                 }
-                let absoluteVal = sqrt(valX * valX + valY * valY + valZ * valZ)
+                var squareX = valX * valX
+                var squareY = valY * valY
+                var squareZ = valZ * valZ
+                let absoluteVal = sqrt(squareX + squareY + squareZ)
                 self.delegate?.retrieveMagnetometerValues!(valX, y: valY, z: valZ, absoluteValue: absoluteVal)
             }
 
