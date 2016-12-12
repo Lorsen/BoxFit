@@ -12,10 +12,21 @@ class TrainingViewController: UIViewController {
 
     @IBOutlet weak var TrainingScroll: UIScrollView!
     @IBOutlet weak var RoutineScroll: UIScrollView!
+    
+    var defaults: UserDefaults!
     override func viewDidLoad() {
+        defaults = UserDefaults.init()
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if(!defaults.bool(forKey: "returningUser")) { //do first time setup
+            defaults.set("on", forKey: "sound")
+            defaults.set(0, forKey: "height")
+            defaults.set(0, forKey: "weight")
+            defaults.set("male", forKey: "gender")
+            defaults.set(0.0, forKey: "fastestPunch")
+            defaults.set(0.0, forKey: "mostAccurate")
+            defaults.set(0, forKey: "lifetimePunches")
+            defaults.set(true, forKey: "returningUser")
+        }
     }
 
     override func didReceiveMemoryWarning() {
