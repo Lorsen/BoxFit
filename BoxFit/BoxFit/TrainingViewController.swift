@@ -12,7 +12,7 @@ class TrainingViewController: UIViewController {
 
     @IBOutlet weak var TrainingScroll: UIScrollView!
     @IBOutlet weak var RoutineScroll: UIScrollView!
-    
+
     var defaults: UserDefaults!
     override func viewDidLoad() {
         defaults = UserDefaults.init()
@@ -27,6 +27,9 @@ class TrainingViewController: UIViewController {
             defaults.set(0, forKey: "lifetimePunches")
             defaults.set(true, forKey: "returningUser")
         }
+        
+        var mh = MotionHandler()
+        mh.doStuff()
     }
 
     override func didReceiveMemoryWarning() {

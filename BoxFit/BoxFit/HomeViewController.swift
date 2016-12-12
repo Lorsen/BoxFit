@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         fastestLabel.text = String(defaults.double(forKey: "fastestPunch"))
         accurateLabel.text = String(defaults.double(forKey: "mostAccurate"))
         lifetimeLabel.text = String(defaults.integer(forKey: "lifetimePunches"))
-        
+
     }
 
     override func didReceiveMemoryWarning() {
