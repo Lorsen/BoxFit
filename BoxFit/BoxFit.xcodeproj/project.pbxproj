@@ -17,6 +17,7 @@
 		074EB98B1DF686590011D78D /* BoxFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EB98A1DF686590011D78D /* BoxFitUITests.swift */; };
 		074EB9991DF68D630011D78D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EB9981DF68D630011D78D /* SettingsViewController.swift */; };
 		074EB99B1DF6971A0011D78D /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EB99A1DF6971A0011D78D /* TrainingViewController.swift */; };
+		2D11203C1DFF58DB0001EFC3 /* PrepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */; };
 		C234006D364CB95A4F581DB1 /* Pods_BoxFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED859AC0484AFC105489CAD9 /* Pods_BoxFit.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		074EB98C1DF686590011D78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		074EB9981DF68D630011D78D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		074EB99A1DF6971A0011D78D /* TrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
+		2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepViewController.swift; sourceTree = "<group>"; };
 		75139BE10765DD4F152DD928 /* Pods-BoxFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxFit/Pods-BoxFit.debug.xcconfig"; sourceTree = "<group>"; };
 		AB76B3CD3BF41717ADA888F4 /* Pods-BoxFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoxFit/Pods-BoxFit.release.xcconfig"; sourceTree = "<group>"; };
 		ED859AC0484AFC105489CAD9 /* Pods_BoxFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 				074EB9981DF68D630011D78D /* SettingsViewController.swift */,
 				074EB99A1DF6971A0011D78D /* TrainingViewController.swift */,
 				074EB96E1DF686580011D78D /* Main.storyboard */,
+				2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */,
 				074EB9711DF686580011D78D /* Assets.xcassets */,
 				074EB9731DF686580011D78D /* LaunchScreen.storyboard */,
 				074EB9761DF686580011D78D /* Info.plist */,
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				074EB99B1DF6971A0011D78D /* TrainingViewController.swift in Sources */,
+				2D11203C1DFF58DB0001EFC3 /* PrepViewController.swift in Sources */,
 				074EB96D1DF686580011D78D /* LearningViewController.swift in Sources */,
 				074EB9691DF686580011D78D /* AppDelegate.swift in Sources */,
 				074EB96B1DF686580011D78D /* HomeViewController.swift in Sources */,
@@ -605,6 +609,7 @@
 				074EB9911DF686590011D78D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		074EB9921DF686590011D78D /* Build configuration list for PBXNativeTarget "BoxFitTests" */ = {
 			isa = XCConfigurationList;
@@ -613,6 +618,7 @@
 				074EB9941DF686590011D78D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		074EB9951DF686590011D78D /* Build configuration list for PBXNativeTarget "BoxFitUITests" */ = {
 			isa = XCConfigurationList;
@@ -621,6 +627,7 @@
 				074EB9971DF686590011D78D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
