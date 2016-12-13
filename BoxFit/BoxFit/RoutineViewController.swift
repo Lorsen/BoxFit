@@ -10,27 +10,35 @@ import UIKit
 
 class RoutineViewController: UIViewController {
 
+    @IBOutlet weak var TimerLabel: UILabel!
     var type: String!
+    
+    var timer: Timer!
+    var countdown: Double = 5.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        TimerLabel.text = String(format: "%.1f", countdown)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
 
-        // Do any additional setup after loading the view.
     }
 
+    func startRoutine() {
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func countDown() {
+        countdown -= 0.1
+        TimerLabel.text = String(format: "%.1f", countdown)
+        if(countdown <= 0) {
+            timer.invalidate()
+            TimerLabel.isHidden = true;
+            startRoutine()
+        }
+        
     }
-    */
-
+    
 }
