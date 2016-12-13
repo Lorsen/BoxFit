@@ -8,18 +8,80 @@
 
 import UIKit
 
-class LearningViewController: UIViewController {
+class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
+    var imageData: [String] = [String]()
+    var imageCounter: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        imageData = ["glove", "first"]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! ImageCell
+        
+        cell.backgroundColor = UIColor.black
+        var currImage:String = ""
+        currImage = self.imageData[self.imageCounter]
+        
+        if(self.imageCounter == 0){
+            cell.movement = "Jab"
+        }
+        
+        else if(self.imageCounter == 1){
+            cell.movement = "Hook"
+        }
+        
+        else if(self.imageCounter == 2){
+            cell.movement = "UpperCut"
+        }
+        
+        else if(self.imageCounter == 3 ){
+           cell.movement = "Block"
+        }
+    
+        self.imageCounter += 1
+        
+        
+        if self.imageCounter >= self.imageData.count {
+            self.imageCounter = 0
+        }
+        
+        cell.image.image = UIImage(named: currImage)
+        return cell
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
 
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        return CGSize(width: 90, height: 90)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! ImageCell
+        print(cell.movement)
+        
+        if(segue.identifier == "LessonSegue") {
+            let nextViewController = (segue.destination as! LessonViewController)
+            nextViewController.activityToReceive = cell.movement
+        }
 
+    }
 }
 
