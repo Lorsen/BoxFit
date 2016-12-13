@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KDCircularProgress.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08D0C886748690B6ED26D4EE9434FF9A</key>
+		<key>1A05654D66331AAA8500244D9672F816</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8144915D96D179D5E951C6D89F5B8CCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D53D8FB67577DB6C7D9A63EFDC84E648</key>
+		<key>F5F5EE287DDF7058F7788036A678B2C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

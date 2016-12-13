@@ -4,4 +4,5 @@ target ‘BoxFit’ do
   pod ‘Alamofire’
   pod ‘KDCircularProgress’
   pod ‘SwiftGifOrigin’
+  pod 'Charts'
 end
