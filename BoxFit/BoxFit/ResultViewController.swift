@@ -18,14 +18,28 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var percentageLabel: UILabel!
     
     var punches: Array<String>!
+    var routine: Array<String>!
+    var percentCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         totalMoves.text = String(punches.count)
         
+        for i in 0...punches.count-1 {
+            if punches[i] == routine[i] {
+                percentCounter += 1
+            }
+        }
+        var accuracy = Double(percentCounter) / Double(punches.count)
+        accuracy = accuracy * 100
+        percentageLabel.text = String(format: "%.0f%%", accuracy)
+        fastestPunch.text = String(0)
+        mostAccuratePunch.text = String(0)
+        leastAccuratePunch.text = String(0)
     }
 
     @IBAction func homeButtonPressed(_ sender: AnyObject) {
+        print(punches)
         self.performSegue(withIdentifier: "TrainingSegue", sender: nil)
     }
     override func didReceiveMemoryWarning() {

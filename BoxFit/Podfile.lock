@@ -6,6 +6,7 @@ PODS:
   - KDCircularProgress (1.5.2)
   - MotionKit (0.9.0)
   - SwiftGifOrigin (1.6.1)
+  - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - KDCircularProgress
   - MotionKit (from `https://github.com/alexruperez/MotionKit.git`, commit `b18ac42`)
   - SwiftGifOrigin
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
   MotionKit:
@@ -30,7 +32,8 @@ SPEC CHECKSUMS:
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
   MotionKit: 103c9ca0f55a77e5db9a0b78c8ae6d81cc24444b
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 6541f4acde0343877fef51f4a0f31031ab8682e1
+PODFILE CHECKSUM: a8ef2bb3943bbbd815ccbb45155dcc26b5fdcace
 
 COCOAPODS: 1.1.1
