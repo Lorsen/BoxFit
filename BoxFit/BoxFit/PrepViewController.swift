@@ -18,7 +18,7 @@ class PrepViewController: UIViewController {
     var routineThree: String = "routineThree"
     var jab: String = "jab"
     var hook: String = "hook"
-    var cross: String = "cross"
+    var uppercut: String = "uppercut"
     var block: String = "block"
     
     var type: String!
@@ -52,7 +52,7 @@ class PrepViewController: UIViewController {
             return
                 "This is the string corrleated with the information for jab training"
         }
-        else if(type == cross) {
+        else if(type == uppercut) {
             return
                 "This is the string correlated with the information for cross training"
         }
@@ -86,7 +86,7 @@ class PrepViewController: UIViewController {
             return
                 "This is the name of the jab training's image"
         }
-        else if(type == cross) {
+        else if(type == uppercut) {
             return
                 "This is the name of the cross training's image"
         }
