@@ -11,9 +11,5 @@ import UIKit
 class ImageCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var trainImage: UIImageView!
-    @IBOutlet weak var routineImage: UIImageView!
-    
-    
     var movement: String = ""
 }
