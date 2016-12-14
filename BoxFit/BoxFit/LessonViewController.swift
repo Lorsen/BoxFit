@@ -17,7 +17,7 @@ class LessonViewController: UIViewController {
     var routineThree: String = "routineThree"
     var jab: String = "jab"
     var hook: String = "hook"
-    var uppercut: String = "uppercut"
+    var cross: String = "cross"
     var block: String = "block"
     
     var type: String!
@@ -44,7 +44,7 @@ class LessonViewController: UIViewController {
             return
                 "This is the string corrleated with the information for jab training"
         }
-        else if(type == uppercut) {
+        else if(type == cross) {
             return
                 "This is the string correlated with the information for cross training"
         }
@@ -78,7 +78,7 @@ class LessonViewController: UIViewController {
             return
                 "This is the name of the jab training's image"
         }
-        else if(type == uppercut) {
+        else if(type == cross) {
             return
                 "This is the name of the cross training's image"
         }
