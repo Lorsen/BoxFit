@@ -86,7 +86,7 @@ class MotionHandler: NSObject {
         var previousGyro = [(Double, Double, Double)](repeating: (Double(), Double(), Double()), count: 4)
         let threshold = 3.0
         
-        while(Date().timeIntervalSince(time) < 2.0) {
+        while(Date().timeIntervalSince(time) < 1.0) {
             for i in 0...3 {
                 previousAccel[i] = accelBuffer.array[(accelBuffer.writeIndex - i) % accelBuffer.array.count]!
                 previousGyro[i] = gyroBuffer.array[(gyroBuffer.writeIndex - i) % gyroBuffer.array.count]!
