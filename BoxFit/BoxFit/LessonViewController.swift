@@ -9,8 +9,6 @@
 import UIKit
 
 class LessonViewController: UIViewController {
-
-    var activityToReceive: String = "not chosen"
     
     var routineOne: String = "routineOne"
     var routineTwo: String = "routineTwo"

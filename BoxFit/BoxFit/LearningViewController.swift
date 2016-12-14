@@ -33,19 +33,19 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
         currImage = self.imageData[self.imageCounter]
         
         if(self.imageCounter == 0){
-            cell.movement = "Jab"
+            cell.movement = "jab"
         }
         
         else if(self.imageCounter == 1){
-            cell.movement = "Hook"
+            cell.movement = "hook"
         }
         
         else if(self.imageCounter == 2){
-            cell.movement = "UpperCut"
+            cell.movement = "uppercut"
         }
         
         else if(self.imageCounter == 3 ){
-           cell.movement = "Block"
+           cell.movement = "block"
         }
     
         self.imageCounter += 1
@@ -79,7 +79,7 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
         
         if(segue.identifier == "LessonSegue") {
             let nextViewController = (segue.destination as! LessonViewController)
-            nextViewController.activityToReceive = cell.movement
+            nextViewController.type = cell.movement
         }
 
     }

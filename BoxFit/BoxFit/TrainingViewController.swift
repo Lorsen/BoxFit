@@ -41,7 +41,7 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
         }
         
         trainingImageData = ["jab", "hook", "uppercut", "block"]
-        routineImageData = ["routine1", "routine2", "routine3"]
+        routineImageData = ["routine_glove_1", "routine_glove_2", "routine_glove_3"]
 
     }
 
@@ -60,19 +60,19 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
             currImage = self.trainingImageData[self.trainingImageCounter]
             
             if(self.trainingImageCounter == 0){
-                trainingCell.movement = "Jab"
+                trainingCell.movement = "jab"
             }
                 
             else if(self.trainingImageCounter == 1){
-                trainingCell.movement = "Hook"
+                trainingCell.movement = "hook"
             }
                 
             else if(self.trainingImageCounter == 2){
-                trainingCell.movement = "UpperCut"
+                trainingCell.movement = "uppercut"
             }
                 
             else if(self.trainingImageCounter == 3 ){
-                trainingCell.movement = "Block"
+                trainingCell.movement = "block"
             }
             
             self.trainingImageCounter += 1
@@ -93,15 +93,15 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
             currImage = self.routineImageData[self.routineImageCounter]
             
             if(self.routineImageCounter == 0){
-                routineCell.movement = "routine1"
+                routineCell.movement = "routineOne"
             }
                 
             else if(self.routineImageCounter == 1){
-                routineCell.movement = "routine2"
+                routineCell.movement = "routineTwo"
             }
                 
             else if(self.trainingImageCounter == 2){
-                routineCell.movement = "routine3"
+                routineCell.movement = "routinethree"
             }
             
             self.routineImageCounter += 1
