@@ -1,11 +1,11 @@
 PODS:
-  - Alamofire (4.0.0)
-  - Charts (2.3.0):
-    - Charts/Core (= 2.3.0)
-  - Charts/Core (2.3.0)
+  - Alamofire (4.2.0)
+  - Charts (3.0.1):
+    - Charts/Core (= 3.0.1)
+  - Charts/Core (3.0.1)
   - KDCircularProgress (1.5.2)
   - MotionKit (0.9.0)
-  - SwiftGifOrigin (1.5.3)
+  - SwiftGifOrigin (1.6.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -25,11 +25,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/alexruperez/MotionKit.git
 
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
-  Charts: 55d7fd9af175b500208601bea872f0fc72c1d19e
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
   MotionKit: 103c9ca0f55a77e5db9a0b78c8ae6d81cc24444b
-  SwiftGifOrigin: 893ebcceabe215a00b607328b5322b4e228347e5
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
 
 PODFILE CHECKSUM: 6541f4acde0343877fef51f4a0f31031ab8682e1
 
