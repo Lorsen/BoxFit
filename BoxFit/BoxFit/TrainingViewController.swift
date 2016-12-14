@@ -27,9 +27,6 @@ class TrainingViewController: UIViewController {
             defaults.set(0, forKey: "lifetimePunches")
             defaults.set(true, forKey: "returningUser")
         }
-        
-        var mh = MotionHandler()
-        mh.doStuff()
     }
 
     override func didReceiveMemoryWarning() {

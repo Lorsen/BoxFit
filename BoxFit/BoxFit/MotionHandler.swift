@@ -8,7 +8,7 @@ import MotionKit
 
 public struct RingBuffer<T> {
     public var array: [T?]
-    fileprivate var readIndex = 0
+    public var readIndex = 0
     fileprivate var writeIndex = 0
 
     public init(count: Int) {
@@ -55,8 +55,8 @@ public struct RingBuffer<T> {
 public class MotionHandler {
     private let interval : Double;
     private let motionKit = MotionKit()
-    public var accelBuffer = RingBuffer<(Double, Double, Double)>(count: 100)
-    public var gyroBuffer = RingBuffer<(Double, Double, Double)>(count: 100)
+    public var accelBuffer = RingBuffer<(Double, Double, Double)>(count: 50)
+    public var gyroBuffer = RingBuffer<(Double, Double, Double)>(count: 50)
 
     init(i: Double) {
         self.interval = i
@@ -76,6 +76,28 @@ public class MotionHandler {
     public func stop() {
         motionKit.stopAccelerometerUpdates()
         motionKit.stopGyroUpdates()
+    }
+    
+    public func getData() -> [[Double]] {
+        var data = [[Double]](repeating:[Double](repeating:Double(), count:50), count:6)
+        // populate data from ring buffers
+        for i in 0...50 {
+            let accelIndex = (self.accelBuffer.readIndex - i) % 50
+            data[i][0] = (self.accelBuffer.array[accelIndex]?.0)!
+            data[i][1] = (self.accelBuffer.array[accelIndex]?.1)!
+            data[i][2] = (self.accelBuffer.array[accelIndex]?.2)!
+            let gyroIndex = (self.gyroBuffer.readIndex - i) % 50
+            data[i][3] = (self.gyroBuffer.array[gyroIndex]?.0)!
+            data[i][4] = (self.gyroBuffer.array[gyroIndex]?.1)!
+            data[i][5] = (self.gyroBuffer.array[gyroIndex]?.2)!
+        }
+        // process data by averaging with a sliding window
+        for i in 1...49 {
+            for j in 0...5 {
+                data[i][j] = (data[i][j-1] + data[i][j] + data[i][j+1]) / 3.0
+            }
+        }
+        return data
     }
 }
 
