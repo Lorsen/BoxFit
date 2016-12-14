@@ -47,6 +47,7 @@ class RoutineViewController: UIViewController {
 
     func startRoutine() {
         routine = setRoutine()
+        result = Array()
         routineTimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(doMove), userInfo: nil, repeats: true)
     }
     func doMove() {
@@ -65,22 +66,22 @@ class RoutineViewController: UIViewController {
         audioPlayer.play()
         
         //listen for punch
-        let data: [[Double]]? = mh.getNextMotion(timeout: 1.0)
-        if data != nil {
+        if let data = mh.getNextMotion(timeout: 1.0) {
             //do http request stuff
-            result[routineIndex] = makePrediction(data: data!)
-        }
-        else {
+            result.append(makePrediction(data))
+        } else {
             result.append("Miss")
         }
+   
         routineIndex += 1
         if(routineIndex == routine.count) {
             routineTimer.invalidate()
             self.performSegue(withIdentifier: "ResultSegue", sender: nil)
         }
+
         
     }
-    func makePrediction(data: [[Double]]) -> String{
+    func makePrediction(_ data: [[Double]]) -> String{
         //do AlamoFire stuff here
         return ""
     }
@@ -127,6 +128,7 @@ class RoutineViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ResultSegue" {
             let resultsController = (segue.destination as! ResultViewController)
+            print(result)
             resultsController.punches = result
         }
     }

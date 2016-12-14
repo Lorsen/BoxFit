@@ -48,11 +48,11 @@ public struct RingBuffer<T> {
     }
 
     public var isFull: Bool {
-        return availableSpaceForWriting == 0
+        return false
     }
 }
 
-public class MotionHandler {
+class MotionHandler: NSObject {
     private let interval : Double;
     private let motionKit = MotionKit()
     public var accelBuffer = RingBuffer<(Double, Double, Double)>(count: 50)
@@ -80,28 +80,28 @@ public class MotionHandler {
     }
     
     public func getNextMotion(timeout: Double) -> [[Double]]? {
-        Timer.scheduledTimer(timeInterval: timeout, target: self, selector: #selector(setReadToFalse), userInfo: nil, repeats: false)
-        listenForEvent = true
+        let time = Date()
+        
+        self.listenForEvent = true
         var previousAccel = [(Double, Double, Double)](repeating: (Double(), Double(), Double()), count: 4)
         var previousGyro = [(Double, Double, Double)](repeating: (Double(), Double(), Double()), count: 4)
         let threshold = 1.0
         
-        while(listenForEvent) {
+        
+        while(Date().timeIntervalSince(time) < 1.0) {
             for i in 0...3 {
-                previousAccel[i] = accelBuffer.array[(accelBuffer.readIndex - i) % accelBuffer.array.count]!
-                previousGyro[i] = gyroBuffer.array[(gyroBuffer.readIndex - i) % gyroBuffer.array.count]!
+                previousAccel[i] = accelBuffer.array[(accelBuffer.writeIndex - i) % accelBuffer.array.count]!
+                previousGyro[i] = gyroBuffer.array[(gyroBuffer.writeIndex - i) % gyroBuffer.array.count]!
             }
             let mag3 = fabs(previousAccel[3].0)+fabs(previousAccel[3].1)+fabs(previousAccel[3].2)
             let mag2 = fabs(previousAccel[2].0)+fabs(previousAccel[2].1)+fabs(previousAccel[2].2)
-            
             let mag1 = fabs(previousAccel[1].0)+fabs(previousAccel[1].1)+fabs(previousAccel[1].2)
             let mag0 = fabs(previousAccel[0].0)+fabs(previousAccel[0].1)+fabs(previousAccel[0].2)
             
             let diff1 = fabs(mag3 - mag2)
             let diff2 = fabs(mag1 - mag0)
             let diff3 = diff2 - diff1
-            print(diff3)
-            if diff2 > threshold {
+            if diff3 > threshold {
                 print("broke threshold")
                 sleep(1)
                 return getData()
@@ -110,26 +110,24 @@ public class MotionHandler {
         return nil
 
     }
-    @objc func setReadToFalse() {
-        listenForEvent = false
-    }
+    
     public func getData() -> [[Double]] {
-        var data = [[Double]](repeating:[Double](repeating:Double(), count:50), count:6)
+        var data = [[Double]](repeating:[Double](repeating:Double(), count:6), count:50)
         // populate data from ring buffers
-        for i in 0...50 {
-            let accelIndex = (self.accelBuffer.readIndex - i) % 50
+        for i in 0...49 {
+            let accelIndex = (self.accelBuffer.writeIndex - i) % 50
             data[i][0] = (self.accelBuffer.array[accelIndex]?.0)!
             data[i][1] = (self.accelBuffer.array[accelIndex]?.1)!
             data[i][2] = (self.accelBuffer.array[accelIndex]?.2)!
-            let gyroIndex = (self.gyroBuffer.readIndex - i) % 50
+            let gyroIndex = (self.gyroBuffer.writeIndex - i) % 50
             data[i][3] = (self.gyroBuffer.array[gyroIndex]?.0)!
             data[i][4] = (self.gyroBuffer.array[gyroIndex]?.1)!
             data[i][5] = (self.gyroBuffer.array[gyroIndex]?.2)!
         }
         // process data by averaging with a sliding window
-        for i in 1...49 {
+        for i in 1...48 {
             for j in 0...5 {
-                data[i][j] = (data[i][j-1] + data[i][j] + data[i][j+1]) / 3.0
+                data[i][j] = (data[i-1][j] + data[i][j] + data[i+1][j]) / 3.0
             }
         }
         return data
