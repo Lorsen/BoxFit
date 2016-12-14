@@ -27,6 +27,7 @@
 		2DDAA88A1E00FA3500A54BFC /* uppercut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8861E00FA3500A54BFC /* uppercut.mp3 */; };
 		2DDAA88B1E00FA3500A54BFC /* block.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8871E00FA3500A54BFC /* block.mp3 */; };
 		2DDAA88C1E00FA3500A54BFC /* hook.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8881E00FA3500A54BFC /* hook.mp3 */; };
+		2DDAA88E1E00FA9400A54BFC /* MotionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDAA88D1E00FA9400A54BFC /* MotionHandler.swift */; };
 		C234006D364CB95A4F581DB1 /* Pods_BoxFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED859AC0484AFC105489CAD9 /* Pods_BoxFit.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		2DDAA8861E00FA3500A54BFC /* uppercut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = uppercut.mp3; path = ../../../../Downloads/uppercut.mp3; sourceTree = "<group>"; };
 		2DDAA8871E00FA3500A54BFC /* block.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = block.mp3; path = ../../../../Downloads/block.mp3; sourceTree = "<group>"; };
 		2DDAA8881E00FA3500A54BFC /* hook.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = hook.mp3; path = ../../../../Downloads/hook.mp3; sourceTree = "<group>"; };
+		2DDAA88D1E00FA9400A54BFC /* MotionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionHandler.swift; sourceTree = "<group>"; };
 		75139BE10765DD4F152DD928 /* Pods-BoxFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxFit/Pods-BoxFit.debug.xcconfig"; sourceTree = "<group>"; };
 		AB76B3CD3BF41717ADA888F4 /* Pods-BoxFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoxFit/Pods-BoxFit.release.xcconfig"; sourceTree = "<group>"; };
 		ED859AC0484AFC105489CAD9 /* Pods_BoxFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 			children = (
 				2DDAA8841E00FA2C00A54BFC /* Sounds */,
 				074EB9681DF686580011D78D /* AppDelegate.swift */,
+				2DDAA88D1E00FA9400A54BFC /* MotionHandler.swift */,
 				2DDAA8751E00EF2300A54BFC /* jab.mp3 */,
 				074EB96A1DF686580011D78D /* HomeViewController.swift */,
 				074EB96C1DF686580011D78D /* LearningViewController.swift */,
@@ -399,6 +402,7 @@
 				2D11203E1DFF604A0001EFC3 /* RoutineViewController.swift in Sources */,
 				07A459211DFFACC000422CF6 /* LessonViewController.swift in Sources */,
 				074EB9991DF68D630011D78D /* SettingsViewController.swift in Sources */,
+				2DDAA88E1E00FA9400A54BFC /* MotionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
