@@ -4,7 +4,9 @@
 //
 //  Created by Omar Roa on 12/6/16.
 //  Copyright © 2016 Omar Roa. All rights reserved.
-//
+//  
+// Code borrowed from http://truelogic.org/wordpress/2015/10/04/how-to-make-an-image-grid-in-swift/
+// Thank you Amit Sengupta
 
 import UIKit
 
@@ -56,7 +58,8 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
         if collectionView == self.trainingCollectionView {
             let trainingCell = collectionView.dequeueReusableCell(withReuseIdentifier: trainingCollectionViewIdentifier, for: indexPath as IndexPath) as! ImageCell
             
-            trainingCell.backgroundColor = UIColor.red
+            let customColor = UIColor(red: 226/255.0, green: 71/255.0, blue: 40/255.0, alpha: 1.0)
+            trainingCell.backgroundColor = customColor
             var currImage:String = ""
             currImage = self.trainingImageData[self.trainingImageCounter]
             
@@ -89,7 +92,8 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
         else{
             let routineCell = collectionView.dequeueReusableCell(withReuseIdentifier: routineCollectionViewIdentifier, for: indexPath as IndexPath) as! ImageCell
             
-            routineCell.backgroundColor = UIColor.red
+            let customColor = UIColor(red: 226/255.0, green: 71/255.0, blue: 40/255.0, alpha: 1.0)
+            routineCell.backgroundColor = customColor
             var currImage:String = ""
             currImage = self.routineImageData[self.routineImageCounter]
             
@@ -113,7 +117,6 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
             
             routineCell.routineImage.image = UIImage(named: currImage)
             return routineCell
-            
         }
     }
     
@@ -129,20 +132,14 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
         return 1
     }
     
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        return CGSize(width: 90, height: 90)
-    }
-    
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let cell = sender as! ImageCell
-    
-            if(segue.identifier == "prepViewSegue") {
-                let nextViewController = (segue.destination as! PrepViewController)
-                nextViewController.type = cell.movement
-            }
-            
+
+        // Needed two segues for two differnt collection view cells
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! ImageCell
+        if(segue.identifier == "prepViewSegue" || segue.identifier == "prepViewSegueFromRoutine") {
+            let nextViewController = (segue.destination as! PrepViewController)
+            nextViewController.type = cell.movement
         }
+    }
 
 }

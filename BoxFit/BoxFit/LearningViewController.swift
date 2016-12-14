@@ -5,6 +5,8 @@
 //  Created by Omar Roa on 12/5/16.
 //  Copyright © 2016 Omar Roa. All rights reserved.
 //
+// Code borrowed from http://truelogic.org/wordpress/2015/10/04/how-to-make-an-image-grid-in-swift/
+// Thank you Amit Sengupta
 
 import UIKit
 
@@ -28,7 +30,9 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! ImageCell
         
-        cell.backgroundColor = UIColor.red
+        let customColor = UIColor(red: 226/255.0, green: 71/255.0, blue: 40/255.0, alpha: 1.0)
+        cell.backgroundColor = customColor
+
         var currImage:String = ""
         currImage = self.imageData[self.imageCounter]
         
@@ -67,12 +71,7 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSize(width: 90, height: 90)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! ImageCell
         print(cell.movement)
