@@ -19,6 +19,7 @@
 		074EB99B1DF6971A0011D78D /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EB99A1DF6971A0011D78D /* TrainingViewController.swift */; };
 		07A4591F1DFF8B9600422CF6 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4591E1DFF8B9600422CF6 /* ImageCell.swift */; };
 		07A459211DFFACC000422CF6 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A459201DFFACC000422CF6 /* LessonViewController.swift */; };
+		07BF97CB1E00F8D5007CCA2B /* MotionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BF97CA1E00F8D5007CCA2B /* MotionHandler.swift */; };
 		2D11203C1DFF58DB0001EFC3 /* PrepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */; };
 		2D11203E1DFF604A0001EFC3 /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11203D1DFF604A0001EFC3 /* RoutineViewController.swift */; };
 		C234006D364CB95A4F581DB1 /* Pods_BoxFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED859AC0484AFC105489CAD9 /* Pods_BoxFit.framework */; };
@@ -60,6 +61,7 @@
 		074EB99A1DF6971A0011D78D /* TrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
 		07A4591E1DFF8B9600422CF6 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		07A459201DFFACC000422CF6 /* LessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		07BF97CA1E00F8D5007CCA2B /* MotionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionHandler.swift; sourceTree = "<group>"; };
 		2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepViewController.swift; sourceTree = "<group>"; };
 		2D11203D1DFF604A0001EFC3 /* RoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		75139BE10765DD4F152DD928 /* Pods-BoxFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxFit/Pods-BoxFit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		074EB9671DF686580011D78D /* BoxFit */ = {
 			isa = PBXGroup;
 			children = (
+				07BF97CA1E00F8D5007CCA2B /* MotionHandler.swift */,
 				074EB9681DF686580011D78D /* AppDelegate.swift */,
 				074EB96A1DF686580011D78D /* HomeViewController.swift */,
 				074EB96C1DF686580011D78D /* LearningViewController.swift */,
@@ -366,6 +369,7 @@
 				07A4591F1DFF8B9600422CF6 /* ImageCell.swift in Sources */,
 				2D11203E1DFF604A0001EFC3 /* RoutineViewController.swift in Sources */,
 				07A459211DFFACC000422CF6 /* LessonViewController.swift in Sources */,
+				07BF97CB1E00F8D5007CCA2B /* MotionHandler.swift in Sources */,
 				074EB9991DF68D630011D78D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        imageData = ["glove", "first"]
+        imageData = ["jab", "hook", "uppercut", "block"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +28,7 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! ImageCell
         
-        cell.backgroundColor = UIColor.black
+        cell.backgroundColor = UIColor.red
         var currImage:String = ""
         currImage = self.imageData[self.imageCounter]
         
