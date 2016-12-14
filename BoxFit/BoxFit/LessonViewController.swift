@@ -36,6 +36,10 @@ class LessonViewController: UIViewController {
         displayImage.image = UIImage(named: imageName)!
         displayLabel.text = type;
         
+        let customColor = UIColor(red: 226/255.0, green: 71/255.0, blue: 40/255.0, alpha: 1.0)
+        self.view.backgroundColor = customColor
+
+        
         // Do any additional setup after loading the view.
     }
     func pickText(type: String) -> String {
