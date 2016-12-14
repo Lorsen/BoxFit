@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eot-m9-DVB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -243,6 +243,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="TimerLabel" destination="VGD-A4-gpn" id="gOh-P9-G4b"/>
+                        <segue destination="ySx-9W-HfK" kind="show" identifier="ResultSegue" id="ODP-t3-Ym0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcU-sf-rIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -359,10 +363,10 @@
             </objects>
             <point key="canvasLocation" x="780" y="1009.8591549295775"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="CP4-kM-Gqg">
             <objects>
-                <viewController id="ySx-9W-HfK" sceneMemberID="viewController">
+                <viewController id="ySx-9W-HfK" customClass="ResultViewController" customModule="BoxFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pQh-sL-yUy"/>
                         <viewControllerLayoutGuide type="bottom" id="TXC-Cb-Xpd"/>
