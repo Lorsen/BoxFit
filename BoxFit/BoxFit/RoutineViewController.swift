@@ -25,7 +25,8 @@ class RoutineViewController: UIViewController {
     var hook: String = "hook"
     var uppercut: String = "uppercut"
     var block: String = "block"
-
+    
+    var mh: MotionHandler!
     
     var routine: Array<String>!
     var routineIndex: Int = 0
@@ -39,22 +40,25 @@ class RoutineViewController: UIViewController {
         super.viewDidLoad()
         
 
+        mh = MotionHandler(i: 0.02)
+        mh.start()
         type = "routineOne"
-        TimerLabel.text = String(format: "%.1f", 5.0)
+        TimerLabel.text = String(format: "%.1f", countdown)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
     }
 
     func startRoutine() {
         routine = setRoutine()
+        result = Array()
         createCircularProgress()
         view.addSubview(progressBar)
+        
         routineTimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(doMove), userInfo: nil, repeats: true)
     }
     func doMove() {
         let move = routine[routineIndex]
-        //say command
         
-
+        //say command
         let soundPath = Bundle.main.path(forResource: move, ofType: "mp3")
         let soundUrl = URL(fileURLWithPath: soundPath!)
         do {
@@ -66,7 +70,14 @@ class RoutineViewController: UIViewController {
         audioPlayer.prepareToPlay()
         audioPlayer.play()
         
-        
+        //listen for punch
+        if let data = mh.getNextMotion(timeout: 1.0) {
+            //do http request stuff
+            result.append(makePrediction(data))
+        } else {
+            result.append("Miss")
+        }
+   
         routineIndex += 1
         let angle: Double = Double(routineIndex * 360) / Double(routine.count)
         progressBar.animate(toAngle: angle, duration: 0.25, completion: nil)
@@ -74,7 +85,12 @@ class RoutineViewController: UIViewController {
             routineTimer.invalidate()
             self.performSegue(withIdentifier: "ResultSegue", sender: nil)
         }
+
         
+    }
+    func makePrediction(_ data: [[Double]]) -> String{
+        //do AlamoFire stuff here
+        return ""
     }
     func setRoutine() -> Array<String>{
         if(type == routineOne) {
@@ -131,6 +147,7 @@ class RoutineViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ResultSegue" {
             let resultsController = (segue.destination as! ResultViewController)
+            print(result)
             resultsController.punches = result
         }
     }
