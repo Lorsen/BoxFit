@@ -9,6 +9,8 @@
 import UIKit
 import KDCircularProgress
 import AVFoundation
+import Alamofire
+import SwiftyJSON
 
 
 class RoutineViewController: UIViewController {
@@ -25,6 +27,7 @@ class RoutineViewController: UIViewController {
     var hook: String = "hook"
     var uppercut: String = "uppercut"
     var block: String = "block"
+    var done: String = "done"
     
     var mh: MotionHandler!
     
@@ -34,8 +37,9 @@ class RoutineViewController: UIViewController {
     var timer: Timer!
     var countdown: Double = 5.0
     var audioPlayer: AVAudioPlayer!
-    var result: Array<String>!
+    var result = [String]()
     
+    var returnVal = [""]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +52,6 @@ class RoutineViewController: UIViewController {
 
     func startRoutine() {
         routine = setRoutine()
-        result = Array()
         createCircularProgress()
         view.addSubview(progressBar)
         
@@ -56,6 +59,7 @@ class RoutineViewController: UIViewController {
     }
     func doMove() {
         let move = routine[routineIndex]
+       
         
         //say command
         let soundPath = Bundle.main.path(forResource: move, ofType: "mp3")
@@ -72,9 +76,9 @@ class RoutineViewController: UIViewController {
         //listen for punch
         if let data = mh.getNextMotion(timeout: 1.0) {
             //do http request stuff
-            result.append(makePrediction(data))
+            makePrediction(data)
         } else {
-            result.append("Miss")
+            result += ["Miss"]
         }
    
         routineIndex += 1
@@ -87,31 +91,50 @@ class RoutineViewController: UIViewController {
 
         
     }
-    func makePrediction(_ data: Array<Double>) -> String{
-        //do AlamoFire stuff here
-        return ""
+    func makePrediction(_ data: Array<Double>){
+        let url = "http://10.8.120.126:8000/PredictOne"
+        let params: [String: Any] = [
+            "feature": data,
+            "dsid": 0
+        ]
+        syncCall(params: params, url: url) {
+            predString in
+            self.result += [predString]
+        }
+    }
+    
+    func syncCall(params: [String: Any], url: String, completion:@escaping (String)->Void) {
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON {
+            (response:DataResponse<Any>) in
+            let data = response.data
+            let jsonvalues = JSON(data: data!)
+            debugPrint(jsonvalues)
+            let predString = jsonvalues["prediction"].stringValue
+            print(predString)
+            completion(predString)
+        }
     }
     func setRoutine() -> Array<String>{
         if(type == routineOne) {
-            return [jab, hook, jab, jab, uppercut]
+            return [jab, hook, jab, jab, uppercut, done]
         }
         else if(type == routineTwo) {
-            return [jab, jab, jab, uppercut, uppercut, hook, hook, jab]
+            return [jab, jab, jab, uppercut, uppercut, hook, hook, jab, done]
         }
         else if(type == routineThree) {
-            return [jab, jab, jab, uppercut, hook, hook, jab, jab, uppercut, jab, hook, jab, jab, uppercut]
+            return [jab, jab, jab, uppercut, hook, hook, jab, jab, uppercut, jab, hook, jab, jab, uppercut, done]
         }
         else if(type == jab) {
-            return [jab, jab, jab, jab, jab, jab, jab, jab, jab, jab]
+            return [jab, jab, jab, jab, jab, jab, jab, jab, jab, jab, done]
         }
         else if(type == uppercut) {
-            return [uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, uppercut]
+            return [uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, uppercut, done]
         }
         else if(type == hook) {
-            return [hook, hook, hook, hook, hook, hook, hook, hook, hook, hook]
+            return [hook, hook, hook, hook, hook, hook, hook, hook, hook, hook, done]
         }
         else if(type == block) {
-            return [block, block, block, block, block, block, block, block, block, block]
+            return [block, block, block, block, block, block, block, block, block, block, done]
         }
         else {
             return []
@@ -146,8 +169,8 @@ class RoutineViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ResultSegue" {
             let resultsController = (segue.destination as! ResultViewController)
-            print(result)
             resultsController.punches = result
+            resultsController.routine = routine
         }
     }
     
