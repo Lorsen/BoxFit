@@ -38,8 +38,6 @@ class RoutineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        type = "routineOne"
         TimerLabel.text = String(format: "%.1f", 5.0)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
     }

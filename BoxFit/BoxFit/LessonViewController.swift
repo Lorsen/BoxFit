@@ -20,6 +20,9 @@ class LessonViewController: UIViewController {
     
     var type: String!
     
+    @IBAction func backButtonPress(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

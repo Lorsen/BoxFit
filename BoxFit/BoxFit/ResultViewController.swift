@@ -10,11 +10,19 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var leastAccuratePunch: UILabel!
+    @IBOutlet weak var mostAccuratePunch: UILabel!
+    @IBOutlet weak var fastestPunch: UILabel!
+    @IBOutlet weak var totalMoves: UILabel!
+    @IBOutlet weak var percentageLabel: UILabel!
+    
     var punches: Array<String>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        totalMoves.text = String(punches.count)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,15 +30,9 @@ class ResultViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let nextController = segue.destination as! PunchTableViewController
+        nextController.punches = punches
     }
-    */
 
 }

@@ -30,6 +30,9 @@ class PrepViewController: UIViewController {
 //        routineImage.image = UIImage(named: imageName)
     }
 
+    @IBAction func backButtonPressed(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

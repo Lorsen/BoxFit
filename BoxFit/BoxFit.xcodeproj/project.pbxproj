@@ -22,12 +22,12 @@
 		2D11203C1DFF58DB0001EFC3 /* PrepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */; };
 		2D11203E1DFF604A0001EFC3 /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11203D1DFF604A0001EFC3 /* RoutineViewController.swift */; };
 		2DDAA8741E00D09600A54BFC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDAA8731E00D09600A54BFC /* ResultViewController.swift */; };
-		2DDAA8761E00EF2300A54BFC /* jab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8751E00EF2300A54BFC /* jab.mp3 */; };
-		2DDAA8891E00FA3500A54BFC /* jab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8851E00FA3500A54BFC /* jab.mp3 */; };
-		2DDAA88A1E00FA3500A54BFC /* uppercut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8861E00FA3500A54BFC /* uppercut.mp3 */; };
-		2DDAA88B1E00FA3500A54BFC /* block.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8871E00FA3500A54BFC /* block.mp3 */; };
-		2DDAA88C1E00FA3500A54BFC /* hook.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8881E00FA3500A54BFC /* hook.mp3 */; };
 		2DDAA88E1E00FA9400A54BFC /* MotionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDAA88D1E00FA9400A54BFC /* MotionHandler.swift */; };
+		2DDAA8951E014E5100A54BFC /* block.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8911E014E5000A54BFC /* block.mp3 */; };
+		2DDAA8961E014E5100A54BFC /* hook.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8921E014E5100A54BFC /* hook.mp3 */; };
+		2DDAA8971E014E5100A54BFC /* jab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8931E014E5100A54BFC /* jab.mp3 */; };
+		2DDAA8981E014E5100A54BFC /* uppercut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8941E014E5100A54BFC /* uppercut.mp3 */; };
+		2DDAA89A1E01514600A54BFC /* PunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDAA8991E01514600A54BFC /* PunchTableViewController.swift */; };
 		C234006D364CB95A4F581DB1 /* Pods_BoxFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED859AC0484AFC105489CAD9 /* Pods_BoxFit.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +71,11 @@
 		2D11203D1DFF604A0001EFC3 /* RoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		2DDAA8731E00D09600A54BFC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2DDAA88D1E00FA9400A54BFC /* MotionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionHandler.swift; sourceTree = "<group>"; };
+		2DDAA8911E014E5000A54BFC /* block.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = block.mp3; path = ../../../../Downloads/block.mp3; sourceTree = "<group>"; };
+		2DDAA8921E014E5100A54BFC /* hook.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = hook.mp3; path = ../../../../Downloads/hook.mp3; sourceTree = "<group>"; };
+		2DDAA8931E014E5100A54BFC /* jab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jab.mp3; path = ../../../../Downloads/jab.mp3; sourceTree = "<group>"; };
+		2DDAA8941E014E5100A54BFC /* uppercut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = uppercut.mp3; path = ../../../../Downloads/uppercut.mp3; sourceTree = "<group>"; };
+		2DDAA8991E01514600A54BFC /* PunchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchTableViewController.swift; sourceTree = "<group>"; };
 		75139BE10765DD4F152DD928 /* Pods-BoxFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxFit/Pods-BoxFit.debug.xcconfig"; sourceTree = "<group>"; };
 		AB76B3CD3BF41717ADA888F4 /* Pods-BoxFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoxFit/Pods-BoxFit.release.xcconfig"; sourceTree = "<group>"; };
 		ED859AC0484AFC105489CAD9 /* Pods_BoxFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +139,7 @@
 				074EB96C1DF686580011D78D /* LearningViewController.swift */,
 				07A459201DFFACC000422CF6 /* LessonViewController.swift */,
 				2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */,
+				2DDAA8991E01514600A54BFC /* PunchTableViewController.swift */,
 				2D11203D1DFF604A0001EFC3 /* RoutineViewController.swift */,
 				2DDAA8731E00D09600A54BFC /* ResultViewController.swift */,
 				074EB9981DF68D630011D78D /* SettingsViewController.swift */,
@@ -168,6 +174,10 @@
 		2DDAA8841E00FA2C00A54BFC /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				2DDAA8911E014E5000A54BFC /* block.mp3 */,
+				2DDAA8921E014E5100A54BFC /* hook.mp3 */,
+				2DDAA8931E014E5100A54BFC /* jab.mp3 */,
+				2DDAA8941E014E5100A54BFC /* uppercut.mp3 */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -302,9 +312,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DDAA8971E014E5100A54BFC /* jab.mp3 in Resources */,
 				074EB9751DF686580011D78D /* LaunchScreen.storyboard in Resources */,
+				2DDAA8961E014E5100A54BFC /* hook.mp3 in Resources */,
 				074EB9721DF686580011D78D /* Assets.xcassets in Resources */,
+				2DDAA8951E014E5100A54BFC /* block.mp3 in Resources */,
 				074EB9701DF686580011D78D /* Main.storyboard in Resources */,
+				2DDAA8981E014E5100A54BFC /* uppercut.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +397,7 @@
 				074EB9691DF686580011D78D /* AppDelegate.swift in Sources */,
 				074EB96B1DF686580011D78D /* HomeViewController.swift in Sources */,
 				2DDAA8741E00D09600A54BFC /* ResultViewController.swift in Sources */,
+				2DDAA89A1E01514600A54BFC /* PunchTableViewController.swift in Sources */,
 				07A4591F1DFF8B9600422CF6 /* ImageCell.swift in Sources */,
 				2D11203E1DFF604A0001EFC3 /* RoutineViewController.swift in Sources */,
 				07A459211DFFACC000422CF6 /* LessonViewController.swift in Sources */,
