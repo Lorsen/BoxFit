@@ -7,13 +7,15 @@
 //
 
 import UIKit
-import SpriteKit
+import KDCircularProgress
 import AVFoundation
+
 
 class RoutineViewController: UIViewController {
 
     
     @IBOutlet weak var TimerLabel: UILabel!
+    var progressBar: KDCircularProgress! = nil
     var type: String!
     
     var routineOne: String = "routineOne"
@@ -48,6 +50,9 @@ class RoutineViewController: UIViewController {
     func startRoutine() {
         routine = setRoutine()
         result = Array()
+        createCircularProgress()
+        view.addSubview(progressBar)
+        
         routineTimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(doMove), userInfo: nil, repeats: true)
     }
     func doMove() {
@@ -74,6 +79,8 @@ class RoutineViewController: UIViewController {
         }
    
         routineIndex += 1
+        let angle: Double = Double(routineIndex * 360) / Double(routine.count)
+        progressBar.animate(toAngle: angle, duration: 0.25, completion: nil)
         if(routineIndex == routine.count) {
             routineTimer.invalidate()
             self.performSegue(withIdentifier: "ResultSegue", sender: nil)
@@ -124,6 +131,18 @@ class RoutineViewController: UIViewController {
             startRoutine()
         }
         
+    }
+    func createCircularProgress() {
+        progressBar = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        progressBar.startAngle = -90
+        progressBar.progressThickness = 0.2
+        progressBar.trackThickness = 0.6
+        progressBar.gradientRotateSpeed = 2
+        progressBar.roundedCorners = true
+        progressBar.glowMode = .forward
+        progressBar.glowAmount = 0.9
+        progressBar.set(colors: UIColor.red)
+        progressBar.center = CGPoint(x: view.center.x, y:view.center.y+25)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ResultSegue" {

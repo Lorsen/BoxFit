@@ -132,6 +132,7 @@
 			children = (
 				2DDAA8841E00FA2C00A54BFC /* Sounds */,
 				074EB9681DF686580011D78D /* AppDelegate.swift */,
+				2DDAA88D1E00FA9400A54BFC /* MotionHandler.swift */,
 				074EB96A1DF686580011D78D /* HomeViewController.swift */,
 				07A4591E1DFF8B9600422CF6 /* ImageCell.swift */,
 				074EB96C1DF686580011D78D /* LearningViewController.swift */,
@@ -171,10 +172,6 @@
 		2DDAA8841E00FA2C00A54BFC /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				2DDAA8851E00FA3500A54BFC /* jab.mp3 */,
-				2DDAA8861E00FA3500A54BFC /* uppercut.mp3 */,
-				2DDAA8871E00FA3500A54BFC /* block.mp3 */,
-				2DDAA8881E00FA3500A54BFC /* hook.mp3 */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -309,13 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DDAA88A1E00FA3500A54BFC /* uppercut.mp3 in Resources */,
-				2DDAA8891E00FA3500A54BFC /* jab.mp3 in Resources */,
 				074EB9751DF686580011D78D /* LaunchScreen.storyboard in Resources */,
 				074EB9721DF686580011D78D /* Assets.xcassets in Resources */,
 				2DDAA88B1E00FA3500A54BFC /* block.mp3 in Resources */,
 				074EB9701DF686580011D78D /* Main.storyboard in Resources */,
-				2DDAA88C1E00FA3500A54BFC /* hook.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

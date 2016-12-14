@@ -16,7 +16,7 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        imageData = ["glove", "first"]
+        imageData = ["jab", "hook", "uppercut", "block"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +28,24 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! ImageCell
         
-        cell.backgroundColor = UIColor.black
+        cell.backgroundColor = UIColor.red
         var currImage:String = ""
         currImage = self.imageData[self.imageCounter]
         
         if(self.imageCounter == 0){
-            cell.movement = "Jab"
+            cell.movement = "jab"
         }
         
         else if(self.imageCounter == 1){
-            cell.movement = "Hook"
+            cell.movement = "hook"
         }
         
         else if(self.imageCounter == 2){
-            cell.movement = "UpperCut"
+            cell.movement = "uppercut"
         }
         
         else if(self.imageCounter == 3 ){
-           cell.movement = "Block"
+           cell.movement = "block"
         }
     
         self.imageCounter += 1
@@ -79,7 +79,7 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
         
         if(segue.identifier == "LessonSegue") {
             let nextViewController = (segue.destination as! LessonViewController)
-            nextViewController.activityToReceive = cell.movement
+            nextViewController.type = cell.movement
         }
 
     }

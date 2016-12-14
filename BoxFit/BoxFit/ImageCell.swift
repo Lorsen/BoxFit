@@ -10,6 +10,10 @@ import UIKit
 
 class ImageCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var trainingImage: UIImageView!
+    
+    @IBOutlet weak var routineImage: UIImageView!
     @IBOutlet weak var image: UIImageView!
     var movement: String = ""
 }
