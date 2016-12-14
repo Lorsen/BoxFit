@@ -25,14 +25,20 @@ class ResultViewController: UIViewController {
         
     }
 
+    @IBAction func homeButtonPressed(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "TrainingSegue", sender: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextController = segue.destination as! PunchTableViewController
-        nextController.punches = punches
+        if(segue.identifier == "punchTableSegue") {
+            let nextController = segue.destination as! PunchTableViewController
+            nextController.punches = punches
+        }
+
     }
 
 }

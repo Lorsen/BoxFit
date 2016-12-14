@@ -42,7 +42,6 @@ class RoutineViewController: UIViewController {
         TimerLabel.text = String(format: "%.1f", 5.0)
         mh = MotionHandler(i: 0.02)
         mh.start()
-        type = "routineOne"
         TimerLabel.text = String(format: "%.1f", countdown)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
     }
@@ -135,12 +134,12 @@ class RoutineViewController: UIViewController {
     func createCircularProgress() {
         progressBar = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         progressBar.startAngle = -90
-        progressBar.progressThickness = 0.2
+        progressBar.progressThickness = 0.5
         progressBar.trackThickness = 0.6
         progressBar.gradientRotateSpeed = 2
         progressBar.roundedCorners = true
-        progressBar.glowMode = .forward
-        progressBar.glowAmount = 0.9
+        progressBar.glowMode = .constant
+        progressBar.glowAmount = 1.0
         progressBar.set(colors: UIColor.red)
         progressBar.center = CGPoint(x: view.center.x, y:view.center.y+25)
     }

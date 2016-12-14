@@ -16,7 +16,7 @@ class PunchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         PunchTable.contentInset.top = UIApplication.shared.statusBarFrame.height
-
+        PunchTable.allowsSelection = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +41,7 @@ class PunchTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "punchCell", for: indexPath)
         cell.textLabel?.text = punches[indexPath.item]
 
         return cell

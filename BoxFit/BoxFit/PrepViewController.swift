@@ -10,8 +10,8 @@ import UIKit
 
 class PrepViewController: UIViewController {
     
-    @IBOutlet weak var routineImage: UIImageView!
     @IBOutlet weak var routineText: UITextView!
+    @IBOutlet weak var routineImage: UIImageView!
     
     var routineOne: String = "routineOne"
     var routineTwo: String = "routineTwo"

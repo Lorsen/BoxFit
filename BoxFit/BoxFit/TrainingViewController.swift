@@ -16,9 +16,10 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
     let trainingCollectionViewIdentifier = "TrainingCell"
     let routineCollectionViewIdentifier = "RoutineCell"
     
+ 
     @IBOutlet weak var trainingCollectionView: UICollectionView!
-    @IBOutlet weak var routineCollectionView: UICollectionView!
     
+    @IBOutlet weak var routineCollectionView: UICollectionView!
     var trainingImageData: [String] = [String]()
     var trainingImageCounter: Int = 0
     
