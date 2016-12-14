@@ -58,7 +58,8 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
         if collectionView == self.trainingCollectionView {
             let trainingCell = collectionView.dequeueReusableCell(withReuseIdentifier: trainingCollectionViewIdentifier, for: indexPath as IndexPath) as! ImageCell
             
-            trainingCell.backgroundColor = UIColor.red
+            let customColor = UIColor(red: 226/255.0, green: 71/255.0, blue: 40/255.0, alpha: 1.0)
+            trainingCell.backgroundColor = customColor
             var currImage:String = ""
             currImage = self.trainingImageData[self.trainingImageCounter]
             
@@ -91,7 +92,8 @@ class TrainingViewController: UIViewController,  UICollectionViewDelegateFlowLay
         else{
             let routineCell = collectionView.dequeueReusableCell(withReuseIdentifier: routineCollectionViewIdentifier, for: indexPath as IndexPath) as! ImageCell
             
-            routineCell.backgroundColor = UIColor.red
+            let customColor = UIColor(red: 226/255.0, green: 71/255.0, blue: 40/255.0, alpha: 1.0)
+            routineCell.backgroundColor = customColor
             var currImage:String = ""
             currImage = self.routineImageData[self.routineImageCounter]
             

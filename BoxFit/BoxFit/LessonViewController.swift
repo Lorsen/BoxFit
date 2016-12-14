@@ -22,6 +22,8 @@ class LessonViewController: UIViewController {
     var type: String!
     
     @IBOutlet weak var displayText: UITextView!
+    @IBOutlet weak var displayImage: UIImageView!
+    @IBOutlet weak var displayLabel: UILabel!
     
     @IBAction func backButtonPress(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
@@ -30,6 +32,13 @@ class LessonViewController: UIViewController {
         super.viewDidLoad()
         
         displayText.text = pickText(type: type)
+        var imageName = pickImage(type: type)
+        displayImage.image = UIImage(named: imageName)!
+        displayLabel.text = type;
+        
+        let customColor = UIColor(red: 226/255.0, green: 71/255.0, blue: 40/255.0, alpha: 1.0)
+        self.view.backgroundColor = customColor
+
         
         // Do any additional setup after loading the view.
     }
@@ -52,15 +61,15 @@ class LessonViewController: UIViewController {
         }
         else if(type == uppercut) {
             return
-            "Rotate your hips and upper body CCW as you pivot your right foot (about 90 degrees).\nYour body rotates just like a right cross (don’t lean forward or backward).\nWith your elbow pointing down, drop your right fist slightly and swing it upwards as you exhale.\nThe punch lands with the palm facing up.\nKeep this punch compact, and recover to your stance quickly.\nThe right uppercut is a devastating punch to use at close range or mid-range. \nIt’s very powerful to throw at the head or body.\nThe greatest risk is that you’re dropping your right hand and exposing yourself to a counter left hook."
+            "Uppercut\nRotate your hips and upper body CCW as you pivot your right foot (about 90 degrees).\nYour body rotates just like a right cross (don’t lean forward or backward).\nWith your elbow pointing down, drop your right fist slightly and swing it upwards as you exhale.\nThe punch lands with the palm facing up.\nKeep this punch compact, and recover to your stance quickly.\nThe right uppercut is a devastating punch to use at close range or mid-range. \nIt’s very powerful to throw at the head or body.\nThe greatest risk is that you’re dropping your right hand and exposing yourself to a counter left hook."
         }
         else if(type == hook) {
             return
-            "Do the following simultaneously:\nPlant your back (right) foot and keep it there.\nThis foot will move when you move forward to deliver the blow.\nShift your left foot onto the toe and twist rightward as if you are stamping out a cigarette.\nLower your left arm and cock it at a 50 degree angle\nTwist your torso to the left.\nKeep your right hand at the chin as a guard.\nThen do the following simultaneously:\nStarting with the legs, unwind your slightly twisted body while twisting your left foot on its toe to the right.\nUse all of the force you can muster to unwind your torso.\nKeep your chin down (always) and your head facing forward.\nIdeally, your head will stay in the same place throughout the duration of the punch.\nKeep your left arm locked at a 90-degree angle."
+            "Hook\nDo the following simultaneously:\nPlant your back (right) foot and keep it there.\nThis foot will move when you move forward to deliver the blow.\nShift your left foot onto the toe and twist rightward as if you are stamping out a cigarette.\nLower your left arm and cock it at a 50 degree angle\nTwist your torso to the left.\nKeep your right hand at the chin as a guard.\nThen do the following simultaneously:\nStarting with the legs, unwind your slightly twisted body while twisting your left foot on its toe to the right.\nUse all of the force you can muster to unwind your torso.\nKeep your chin down (always) and your head facing forward.\nIdeally, your head will stay in the same place throughout the duration of the punch.\nKeep your left arm locked at a 90-degree angle."
         }
         else if(type == block) {
             return
-                "This is the string correlated with the information for the block training"
+            "Block\nBring your gloves closer to cover your face.\nRaise right glove to block left-handed punches.\nRaise left glove to block right-handed punches."
         }
         else {
             return "no information found for this option"
@@ -82,19 +91,19 @@ class LessonViewController: UIViewController {
         }
         else if(type == jab) {
             return
-                "This is the name of the jab training's image"
+                "jab_demo"
         }
         else if(type == uppercut) {
             return
-                "This is the name of the cross training's image"
+                "uppercut_demo"
         }
         else if(type == hook) {
             return
-                "This is the name of the hook training's image"
+                "hook_demo"
         }
         else if(type == block) {
             return
-                "This is the name of the block training's image"
+                "block_demo"
         }
         else {
             return "no information found for this option"

@@ -30,7 +30,9 @@ class LearningViewController: UIViewController,  UICollectionViewDelegateFlowLay
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! ImageCell
         
-        cell.backgroundColor = UIColor.red
+        let customColor = UIColor(red: 226/255.0, green: 71/255.0, blue: 40/255.0, alpha: 1.0)
+        cell.backgroundColor = customColor
+
         var currImage:String = ""
         currImage = self.imageData[self.imageCounter]
         
