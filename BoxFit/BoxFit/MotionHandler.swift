@@ -58,6 +58,7 @@ public class MotionHandler {
     public var accelBuffer = RingBuffer<(Double, Double, Double)>(count: 50)
     public var gyroBuffer = RingBuffer<(Double, Double, Double)>(count: 50)
 
+    var listenForEvent = false
     init(i: Double) {
         self.interval = i
     }
@@ -78,6 +79,40 @@ public class MotionHandler {
         motionKit.stopGyroUpdates()
     }
     
+    public func getNextMotion(timeout: Double) -> [[Double]]? {
+        Timer.scheduledTimer(timeInterval: timeout, target: self, selector: #selector(setReadToFalse), userInfo: nil, repeats: false)
+        listenForEvent = true
+        var previousAccel = [(Double, Double, Double)](repeating: (Double(), Double(), Double()), count: 4)
+        var previousGyro = [(Double, Double, Double)](repeating: (Double(), Double(), Double()), count: 4)
+        let threshold = 1.0
+        
+        while(listenForEvent) {
+            for i in 0...3 {
+                previousAccel[i] = accelBuffer.array[(accelBuffer.readIndex - i) % accelBuffer.array.count]!
+                previousGyro[i] = gyroBuffer.array[(gyroBuffer.readIndex - i) % gyroBuffer.array.count]!
+            }
+            let mag3 = fabs(previousAccel[3].0)+fabs(previousAccel[3].1)+fabs(previousAccel[3].2)
+            let mag2 = fabs(previousAccel[2].0)+fabs(previousAccel[2].1)+fabs(previousAccel[2].2)
+            
+            let mag1 = fabs(previousAccel[1].0)+fabs(previousAccel[1].1)+fabs(previousAccel[1].2)
+            let mag0 = fabs(previousAccel[0].0)+fabs(previousAccel[0].1)+fabs(previousAccel[0].2)
+            
+            let diff1 = fabs(mag3 - mag2)
+            let diff2 = fabs(mag1 - mag0)
+            let diff3 = diff2 - diff1
+            print(diff3)
+            if diff2 > threshold {
+                print("broke threshold")
+                sleep(1)
+                return getData()
+            }
+        }
+        return nil
+
+    }
+    @objc func setReadToFalse() {
+        listenForEvent = false
+    }
     public func getData() -> [[Double]] {
         var data = [[Double]](repeating:[Double](repeating:Double(), count:50), count:6)
         // populate data from ring buffers

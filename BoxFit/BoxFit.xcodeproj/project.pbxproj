@@ -22,7 +22,6 @@
 		2D11203C1DFF58DB0001EFC3 /* PrepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */; };
 		2D11203E1DFF604A0001EFC3 /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11203D1DFF604A0001EFC3 /* RoutineViewController.swift */; };
 		2DDAA8741E00D09600A54BFC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDAA8731E00D09600A54BFC /* ResultViewController.swift */; };
-		2DDAA8761E00EF2300A54BFC /* jab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8751E00EF2300A54BFC /* jab.mp3 */; };
 		2DDAA8891E00FA3500A54BFC /* jab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8851E00FA3500A54BFC /* jab.mp3 */; };
 		2DDAA88A1E00FA3500A54BFC /* uppercut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8861E00FA3500A54BFC /* uppercut.mp3 */; };
 		2DDAA88B1E00FA3500A54BFC /* block.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAA8871E00FA3500A54BFC /* block.mp3 */; };
@@ -70,7 +69,6 @@
 		2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepViewController.swift; sourceTree = "<group>"; };
 		2D11203D1DFF604A0001EFC3 /* RoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		2DDAA8731E00D09600A54BFC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		2DDAA8751E00EF2300A54BFC /* jab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jab.mp3; path = ../../../../Downloads/jab.mp3; sourceTree = "<group>"; };
 		2DDAA8851E00FA3500A54BFC /* jab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jab.mp3; path = ../../../../Downloads/jab.mp3; sourceTree = "<group>"; };
 		2DDAA8861E00FA3500A54BFC /* uppercut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = uppercut.mp3; path = ../../../../Downloads/uppercut.mp3; sourceTree = "<group>"; };
 		2DDAA8871E00FA3500A54BFC /* block.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = block.mp3; path = ../../../../Downloads/block.mp3; sourceTree = "<group>"; };
@@ -134,11 +132,11 @@
 			children = (
 				2DDAA8841E00FA2C00A54BFC /* Sounds */,
 				074EB9681DF686580011D78D /* AppDelegate.swift */,
-				2DDAA88D1E00FA9400A54BFC /* MotionHandler.swift */,
-				2DDAA8751E00EF2300A54BFC /* jab.mp3 */,
 				074EB96A1DF686580011D78D /* HomeViewController.swift */,
+				07A4591E1DFF8B9600422CF6 /* ImageCell.swift */,
 				074EB96C1DF686580011D78D /* LearningViewController.swift */,
 				07A459201DFFACC000422CF6 /* LessonViewController.swift */,
+				2DDAA88D1E00FA9400A54BFC /* MotionHandler.swift */,
 				2D11203B1DFF58DB0001EFC3 /* PrepViewController.swift */,
 				2D11203D1DFF604A0001EFC3 /* RoutineViewController.swift */,
 				2DDAA8731E00D09600A54BFC /* ResultViewController.swift */,
@@ -148,7 +146,6 @@
 				074EB9711DF686580011D78D /* Assets.xcassets */,
 				074EB9731DF686580011D78D /* LaunchScreen.storyboard */,
 				074EB9761DF686580011D78D /* Info.plist */,
-				07A4591E1DFF8B9600422CF6 /* ImageCell.swift */,
 			);
 			path = BoxFit;
 			sourceTree = "<group>";
@@ -316,7 +313,6 @@
 				2DDAA8891E00FA3500A54BFC /* jab.mp3 in Resources */,
 				074EB9751DF686580011D78D /* LaunchScreen.storyboard in Resources */,
 				074EB9721DF686580011D78D /* Assets.xcassets in Resources */,
-				2DDAA8761E00EF2300A54BFC /* jab.mp3 in Resources */,
 				2DDAA88B1E00FA3500A54BFC /* block.mp3 in Resources */,
 				074EB9701DF686580011D78D /* Main.storyboard in Resources */,
 				2DDAA88C1E00FA3500A54BFC /* hook.mp3 in Resources */,

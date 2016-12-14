@@ -23,7 +23,8 @@ class RoutineViewController: UIViewController {
     var hook: String = "hook"
     var uppercut: String = "uppercut"
     var block: String = "block"
-
+    
+    var mh: MotionHandler!
     
     var routine: Array<String>!
     var routineIndex: Int = 0
@@ -37,8 +38,10 @@ class RoutineViewController: UIViewController {
         super.viewDidLoad()
         
 
+        mh = MotionHandler(i: 0.02)
+        mh.start()
         type = "routineOne"
-        TimerLabel.text = String(format: "%.1f", 5.0)
+        TimerLabel.text = String(format: "%.1f", countdown)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
     }
 
@@ -48,9 +51,8 @@ class RoutineViewController: UIViewController {
     }
     func doMove() {
         let move = routine[routineIndex]
-        //say command
         
-
+        //say command
         let soundPath = Bundle.main.path(forResource: move, ofType: "mp3")
         let soundUrl = URL(fileURLWithPath: soundPath!)
         do {
@@ -62,14 +64,25 @@ class RoutineViewController: UIViewController {
         audioPlayer.prepareToPlay()
         audioPlayer.play()
         
-        
-        
+        //listen for punch
+        let data: [[Double]]? = mh.getNextMotion(timeout: 1.0)
+        if data != nil {
+            //do http request stuff
+            result[routineIndex] = makePrediction(data: data!)
+        }
+        else {
+            result.append("Miss")
+        }
         routineIndex += 1
         if(routineIndex == routine.count) {
             routineTimer.invalidate()
             self.performSegue(withIdentifier: "ResultSegue", sender: nil)
         }
         
+    }
+    func makePrediction(data: [[Double]]) -> String{
+        //do AlamoFire stuff here
+        return ""
     }
     func setRoutine() -> Array<String>{
         if(type == routineOne) {
