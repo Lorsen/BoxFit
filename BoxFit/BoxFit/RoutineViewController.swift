@@ -87,7 +87,7 @@ class RoutineViewController: UIViewController {
 
         
     }
-    func makePrediction(_ data: [String: [String: String]]) -> String{
+    func makePrediction(_ data: Array<Double>) -> String{
         //do AlamoFire stuff here
         return ""
     }
